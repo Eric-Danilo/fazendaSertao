@@ -34,8 +34,18 @@ while True:
 
         if tipo_usuario == 1:
             print('----Cadastro ADM---------')
+            nome_usuario = input("Insira o nome do usuario: ")
+            senha_usuario = input("Crie sua senha: ")
+            administrador.append([nome_usuario, senha_usuario])
+            print('ADM - Cadastrado com sucesso!!!')
+            print(administrador)
         elif tipo_usuario == 2:
             print('----Cadastro CLIENTE-----')
+            nome_usuario = input("Insira o nome do usuario: ")
+            senha_usuario = input("Crie sua senha: ")
+            cliente.append([nome_usuario, senha_usuario])
+            print('CLIENTE - Cadastrado com sucesso!!!')
+            print(cliente)
     elif opcao == 3:
         print('Saindo do sistema.......')
         break
