@@ -1,5 +1,6 @@
 cliente = []
 administrador = []
+logado = False
 
 while True:
     print('-----Sistema Gestao Agropecuaria------')
@@ -23,7 +24,3 @@ while True:
     elif opcao == 3:
         print('Saindo do sistema.......')
         break
-
-
-    
-
