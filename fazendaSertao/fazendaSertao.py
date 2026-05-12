@@ -6,11 +6,11 @@ producao = []
 logado = False
 
 while True:
-    print('-----Sistema Gestao Agropecuaria------')
+    print('-----Sistema Gestao Agropecuaria-----')
     print('1. Login')
     print('2. Cadastro usuario')
     print('3. Sair')
-    print('--------------------------------------')
+    print('-------------------------------------')
     opcao_menu = int(input('Digite a opcao que deseja: '))
 
     if opcao_menu == 1:
@@ -27,7 +27,7 @@ while True:
 
         if logado and tipo_login == 'ADM':
             while True:
-                print('-----MENU ADMINISTRADOR-----')
+                print('----MENU ADMINISTRADOR----')
                 print('1. Cadastrar animal')
                 print('2. Listar animais')
                 print('3. Buscar animal')
@@ -39,9 +39,9 @@ while True:
                 opcao_adm = int(input('Escolha a opção: '))
 
                 if opcao_adm == 1:
-                    tipo = input('Tipos (Bovino, Caprino, Ovino, Suino): ')
+                    tipo = input('Tipos do animal: ')
                     iden_animal = input('Identificação do animal: ')
-                    status_animal = input('Status: ')
+                    status_animal = input('Status do animal: ')
 
                     rebanho.append([tipo, iden_animal, status_animal])
                     print('Animal cadastrado com sucesso!')
@@ -66,7 +66,7 @@ while True:
                         print('Animal não encontrado ou não foi cadastrado!')
 
                 elif opcao_adm == 4:                           
-                    print('Qual animal você deseja alterar/atualizar?')
+                    print('Qual animal você deseja atualizar?')
                     atualize_animal = input("Insira o ID do animal a ser alterado: ")
 
                     for animal in rebanho:
@@ -134,7 +134,7 @@ while True:
 
         if logado and tipo_login == 'CLIENTE':
             while True:
-                print('-----MENU CLIENTE-----')
+                print('----MENU CLIENTE----')
                 print('1. Olhar produtos')
                 print('2. Comprar')
                 print('3. Voltar')
@@ -149,7 +149,7 @@ while True:
         tipo_usuario = int(input('Digite 1- ADM ou 2- CLIENTE: '))
 
         if tipo_usuario == 1:
-            print('----Cadastro ADM---------')
+            print('----Cadastro ADM----')
             nome_usuario = input("Insira o nome do usuario: ")
             senha_usuario = input("Crie sua senha: ")
             administrador.append([nome_usuario, senha_usuario])
@@ -163,5 +163,5 @@ while True:
             print('CLIENTE - Cadastrado com sucesso!!!')
 
     elif opcao_menu == 3:
-        print('Saindo do sistema.......')
+        print('Saindo do sistema...')
         break
