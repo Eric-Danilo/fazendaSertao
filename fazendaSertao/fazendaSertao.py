@@ -1,6 +1,7 @@
-cliente = []
-administrador = [['eric','123']]
+administrador = [['rodrigo','123']]
+cliente = [['rodri','123']]
 rebanho = []
+estoque = []
 logado = False
 
 while True:
@@ -30,7 +31,8 @@ while True:
                         print('3. Buscar animal')
                         print('4. Atualizar animal')
                         print('5. Remover animal')
-                        print('6. Voltar')
+                        print('6. Adicionar produtos')
+                        print('7. Voltar')
 
                         opcao = int(input('Escolha a opção: '))
 
@@ -81,13 +83,17 @@ while True:
                             for animal in rebanho:
                                 if animal[1] == remove_animal:
                                     rebanho.pop(item)
-                                    print('Animal removido')
+                                    print('Animal removido!')
                                     break
                                 item += 1
                             else:
                                 print("Animal não encontrado!")
 
                         elif opcao == 6:
+                            litros_leite = float(input('Quantidade de leite em litros produzidos: '))
+                            print(f'{litros_leite} litros foram registrados com sucesso!')
+
+                        elif opcao == 7:
                             break
 
         for cli in cliente:
@@ -95,7 +101,16 @@ while True:
                 print('Login realizado como CLIENTE!')
                 logado = True
                 tipo_login = 'CLIENTE'
-        
+
+            if logado and tipo_login == 'CLIENTE':
+                while True:
+                    print('-----MENU CLIENTE-----')
+                    print('1. Olhar produtos')
+                    print('2. Comprar')
+                    print('3. Voltar')
+
+                    opcao = int(input('Escolha a opção: '))
+
         if logado == False:
             print('Usuario ou senha incorretos!')
 
