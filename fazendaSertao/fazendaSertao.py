@@ -1,5 +1,5 @@
-administrador = []
-cliente = []
+administrador = [['eric', '123']]
+cliente = [['cire','123']]
 rebanho = []
 estoque = []
 producao = []
@@ -134,12 +134,25 @@ while True:
 
         if logado and tipo_login == 'CLIENTE':
             while True:
-                print('----MENU CLIENTE----')
+                print('---- MENU CLIENTE ----')
                 print('1. Olhar produtos')
                 print('2. Comprar')
                 print('3. Voltar')
+                print('----------------------')
 
                 opcao_cli = int(input('Escolha a opção: '))
+                if opcao_cli == 1:
+                    produtos_venda = []
+                    for prod in estoque:                        
+                        produtos_venda.append(prod)
+                        print(produtos_venda)
+                    print('to aq')
+
+                elif opcao_cli == 2:
+                    print('compra')
+                elif opcao_cli == 3:
+                    break
+
 
         if logado == False:
             print('Usuario ou senha incorretos!')
