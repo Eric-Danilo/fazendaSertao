@@ -41,7 +41,8 @@ while True:
                 if opcao_adm == 1:
                     tipo = input('Tipos do animal: ')
                     iden_animal = input('Identificação do animal: ')
-                    status_animal = input('Status do animal: ')
+                    print('1- Lactação 2-Engorda 3-Venda')
+                    status_animal = int(input('Status do animal: '))
 
                     rebanho.append([tipo, iden_animal, status_animal])
                     print('Animal cadastrado com sucesso!')
@@ -141,12 +142,25 @@ while True:
                 print('----------------------')
 
                 opcao_cli = int(input('Escolha a opção: '))
-                if opcao_cli == 1:
-                    produtos_venda = []
-                    for prod in estoque:                        
-                        produtos_venda.append(prod)
-                        print(produtos_venda)
-                    print('to aq')
+                if opcao_cli == 1:  
+                    animais_venda = [] 
+                    produtos_venda = []                     
+
+                    for prod in estoque:                                                                      
+                        produtos_venda.append([prod])
+                        print('----Lista Produtos-----')
+                        print(f'Produto: {prod[0]} - Qntd: {prod[1]}')
+                        print('-----------------------')
+
+                    for animal in rebanho:
+                        if animal[2] == 3:
+                            animais_venda.append([animal])
+                            print('----------Lista Animais-------')
+                            print(f'Animal: {animal[0]} - nº identificação: {animal[1]} - Disponivel')                        
+                            print('------------------------------')
+
+                    # print(produtos_venda)
+                    # print('to aq')
 
                 elif opcao_cli == 2:
                     print('compra')
